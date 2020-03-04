@@ -33,7 +33,7 @@ _Important 2: The default Log, Counter, and Checkpoint are no-op which means no 
 import(
 	// ...
 
-	consumer "github.com/harlow/kinesis-consumer"
+	consumer "github.com/healiha/kinesis-consumer"
 )
 
 func main() {
@@ -137,7 +137,7 @@ To persist scan progress choose one of the following storage layers:
 The Redis checkpoint requries App Name, and Stream Name:
 
 ```go
-import store "github.com/harlow/kinesis-consumer/store/redis"
+import store "github.com/healiha/kinesis-consumer/store/redis"
 
 // redis checkpoint
 db, err := store.New(appName)
@@ -151,7 +151,7 @@ if err != nil {
 The DynamoDB checkpoint requires Table Name, App Name, and Stream Name:
 
 ```go
-import store "github.com/harlow/kinesis-consumer/store/ddb"
+import store "github.com/healiha/kinesis-consumer/store/ddb"
 
 // ddb checkpoint
 db, err := store.New(appName, tableName)
@@ -192,7 +192,7 @@ Sort key: shard_id
 The Postgres checkpoint requires Table Name, App Name, Stream Name and ConnectionString:
 
 ```go
-import store "github.com/harlow/kinesis-consumer/store/postgres"
+import store "github.com/healiha/kinesis-consumer/store/postgres"
 
 // postgres checkpoint
 db, err := store.New(app, table, connStr)
@@ -220,7 +220,7 @@ The table name has to be the same that you specify when creating the checkpoint.
 The Mysql checkpoint requires Table Name, App Name, Stream Name and ConnectionString (just like the Postgres checkpoint!):
 
 ```go
-import store "github.com/harlow/kinesis-consumer/store/mysql"
+import store "github.com/healiha/kinesis-consumer/store/mysql"
 
 // mysql checkpoint
 db, err := store.New(app, table, connStr)
